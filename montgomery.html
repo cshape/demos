@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Online Mall Blibli.com</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
 <!--Begin Comm100 Live Chat Code-->
 <div id="comm100-button-dynamic"></div>
 <script type="text/javascript">
 
 let isMontgomeryOpen = 'true';
 let today = new Date();
-let hourInRockland = today.getUTCHours() - 4;
+let hourInRockville = today.getUTCHours() - 4;
 let minutes = today.getMinutes();
 let dayOfWeek = today.getDay();
 
@@ -20,11 +13,11 @@ if (dayOfWeek == 0 || dayOfWeek == 6) {
   isMontgomeryOpen = 'false';
 } 
 // if it's before 9 or after 4, we're closed
-else if (hourInRockland < 9 || hourInRockland > 16) {
+else if (hourInRockville < 9 || hourInRockville > 16) {
   isMontgomeryOpen = 'false';
 } 
 // if it's after 2, and it's Thursday or Friday, we're closed
-else if (hourInRockland > 14 && dayOfWeek == 4 || dayOfWeek == 5) {
+else if (hourInRockville > 14 && dayOfWeek == 4 || dayOfWeek == 5) {
   isMontgomeryOpen = 'false';
 }
   
@@ -33,5 +26,3 @@ var Comm100API=Comm100API||{};(function(t){function e(e){var a=document.createEl
 </script>
 
 <!--End Comm100 Live Chat Code-->
-</body>
-</html>
