@@ -7,8 +7,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src ="https://cdn.jsdelivr.net/gh/LivePersonNY/MultiButtonEngagement/multi-engagement.min.js"></script>
         <script>
-            let LPdiv = document.getElementById("LPMcontainer-1645033992566-0");
-            LPdiv.addEventListener('click', lpMultiChannelEngagement.startWebWithMessage("channel","LPMcontainer-1645033992566-0"))
+            let LPdiv = document.getElementsByClassName("LPMcontainer")[0];
+            LPdiv.addEventListener('click', lpMultiChannelEngagement.startWebWithMessage("channel"))
         </script>
     </head>
     <body>
