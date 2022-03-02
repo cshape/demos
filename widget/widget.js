@@ -3,11 +3,15 @@ lpTag.agentSDK.init()
 var updateCallback = function(data) {
     // Do something with the returning data
     // var path = data.key;
-    var value = data.newValue;
+    var chatLines = data.newValue;
     console.log("DATA: " + data);
     console.log("VALUE: " + value);
     let usertext = document.getElementById("usertext");
-    usertext.innerHTML = value.toString();
+    let textFromSDK = ""
+    chatLines.map(line => {
+        textFromSDK = textFromSDK + line.text
+    })
+    usertext.innerHTML = textFromSDK;
     // called each time the value is updated.
     // If there's an existing value when bind is called - this callback
     // will be called with the existing value
