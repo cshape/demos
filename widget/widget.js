@@ -4,8 +4,8 @@ var updateCallback = function(data) {
     // Do something with the returning data
     // var path = data.key;
     var newLine = data.newValue;
-    console.log("DATA: " + data);
-    console.log("VALUE: " + newLine);
+    console.log("DATA: " + JSON.stringify(data));
+    console.log("VALUE: " + JSON.stringify(newLine));
     let usertext = document.getElementById("usertext");
     let textFromSDK = ""
     data.map(line => {
