@@ -1,4 +1,5 @@
 console.log("hello!");
+lpTag.agentSDK.init()
 var updateCallback = function(data) {
     // Do something with the returning data
     // var path = data.key;
