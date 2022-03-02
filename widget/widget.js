@@ -3,12 +3,12 @@ lpTag.agentSDK.init()
 var updateCallback = function(data) {
     // Do something with the returning data
     // var path = data.key;
-    var chatLines = data.newValue;
+    var newLine = data.newValue;
     console.log("DATA: " + data);
-    console.log("VALUE: " + value);
+    console.log("VALUE: " + newLine);
     let usertext = document.getElementById("usertext");
     let textFromSDK = ""
-    chatLines.map(line => {
+    data.map(line => {
         textFromSDK = textFromSDK + line.text
     })
     usertext.innerHTML = textFromSDK;
