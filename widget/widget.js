@@ -3,10 +3,10 @@ var updateCallback = function(data) {
     var newLine = data.newValue;
     let usertext = document.getElementById("usertext");
     let agenttext = document.getElementById("agenttext");
-    if (newLine[0].by = "Visitor") {
-        usertext.innerHTML == newLine[0].text;
+    if (newLine[0].by == "Visitor") {
+        usertext.innerHTML = newLine[0].text;
     } else {
-        agenttext.innerHTML == newLine[0].text;
+        agenttext.innerHTML = newLine[0].text;
     }
 };
 
@@ -18,4 +18,3 @@ var notifyWhenDone = function(err) {
 };
 var pathToData = "chatTranscript.lines";
 lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
-
