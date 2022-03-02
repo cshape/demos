@@ -3,13 +3,14 @@ lpTag.agentSDK.init()
 var updateCallback = function(data) {
     // Do something with the returning data
     // var path = data.key;
-    var newLine = JSON.stringify(data.newValue);
-    console.log("DATA: " + JSON.stringify(data));
-    console.log("stringified new line: " + newLine);
-    let newInfoArray = JSON.parse(newLine)
+    // var newLine = JSON.stringify(data.newValue);
+    var newLine = data.newValue;
+    // console.log("DATA: " + JSON.stringify(data));
+    // console.log("stringified new line: " + newLine);
+    // let newInfoArray = JSON.parse(newLine)
     let usertext = document.getElementById("usertext");
     let agenttext = document.getElementById("agenttext");
-    console.log(newInfoArray[0].text)
+    console.log(newLine[0].text)
     if (newLine[0].by = "Visitor") {
         usertext.innerHTML = newLine[0].text;
     } else {
