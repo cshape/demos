@@ -7,7 +7,7 @@ var updateCallback = function(data) {
     console.log("DATA: " + data);
     console.log("VALUE: " + value);
     let usertext = document.getElementById("usertext");
-    usertext.innerHTML = value;
+    usertext.innerHTML = value.toString();
     // called each time the value is updated.
     // If there's an existing value when bind is called - this callback
     // will be called with the existing value
