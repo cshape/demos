@@ -12,7 +12,8 @@ var updateCallback = function(data) {
         agenttext.innerHTML = newLine[0].text;
         console.log('setting agent text');
     }
-    var ccsData = document.getElementById("ccs").innerHTML;
+    var ccs = document.getElementById("ccs");
+    var ccsData = ccs.innerHTML;
     console.log("ccs data element: " + ccsData)
     if (ccsData == "") {
         // API call to grab data
@@ -34,7 +35,7 @@ var updateCallback = function(data) {
                 },
             }).then(response => {
                 console.log(response)
-                ccsData = response.data;
+                ccs.innerHTML = response.data;
             }).then (err => {
                 console.log(err)
             })
