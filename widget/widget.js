@@ -20,17 +20,20 @@ var updateCallback = function(data) {
         let sessionId = ""
         let onSuccessVisitor = (data) => {
             visitorId = data; 
+            console.log("visitorId :  " + visitorId);
         }
         let onSuccessSession = (data) => {
             sessionId = data; 
+            console.log("sessionId :  " + sessionId);
         }
         let onFailure = (err) => {
             console.log(err);
         }
-        lpTag.agentSDK.get("visitorInfo.visitorId", onSuccessVisitor, onFailure);
-        lpTag.agentSDK.get("chatInfo.rtSessionId", onSuccessSession, onFailure);
-        console.log("visitorId :  " + visitorId);
-        console.log("sessionId :  " + sessionId);
+        var path = "visitorInfo.visitorId";
+        var path2 = "chatInfo.rtSessionId";
+        lpTag.agentSDK.get(path, onSuccessVisitor, onFailure);
+        lpTag.agentSDK.get(path2, onSuccessSession, onFailure);
+
         axios({
             method: 'get',
             url: `https://z1.context.liveperson.net/v1/account/53271635/accountId/${sessionId}/properties`,
