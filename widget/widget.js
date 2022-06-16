@@ -34,7 +34,7 @@ var updateCallback = function(data) {
                 },
             }).then(response => {
                 console.log(response)
-                ccsData.innerHTML = response;
+                ccsData.innerHTML = response.data;
             }).then (err => {
                 console.log(err)
             })
