@@ -28,7 +28,7 @@ var updateCallback = function(data) {
             console.log("sessionId :  " + sessionId);
             axios({
                 method: 'get',
-                url: `https://z1.context.liveperson.net/v1/account/53271635/acountId/${sessionId}/properties/accountId`,
+                url: `https://z1.context.liveperson.net/v1/account/53271635/accountId/${sessionId}/properties/accountId`,
                 headers: {
                 'Content-Type': 'application/json',
                 'maven-api-key': `DV81jFETsdNTMyNzE2MzU=`
