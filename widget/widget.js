@@ -21,19 +21,19 @@ var updateCallback = function(data) {
         let onSuccessSession = (data) => {
             sessionId = data; 
             console.log("sessionId :  " + sessionId);
-            axios({
-                method: 'get',
-                url: `https://z1.context.liveperson.net/v1/account/53271635/accountId/${sessionId}/properties/accountId`,
-                headers: {
-                'Content-Type': 'application/json',
-                'maven-api-key': `DV81jFETsdNTMyNzE2MzU=`
-                },
-            }).then(response => {
-                console.log(response)
-                ccs.innerHTML = response.data;
-            }).then (err => {
-                console.log(err)
-            })
+            // axios({
+            //     method: 'get',
+            //     url: `https://z1.context.liveperson.net/v1/account/53271635/accountId/${sessionId}/properties/accountId`,
+            //     headers: {
+            //     'Content-Type': 'application/json',
+            //     'maven-api-key': `DV81jFETsdNTMyNzE2MzU=`
+            //     },
+            // }).then(response => {
+            //     console.log(response)
+            //     ccs.innerHTML = response.data;
+            // }).then (err => {
+            //     console.log(err)
+            // })
         }
         let onFailure = (err) => {
             console.log(err);
