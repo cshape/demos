@@ -6,11 +6,13 @@ var updateCallback = function(data) {
     let agenttext = document.getElementById("agenttext");
     if (newLine[0].by == "Visitor") {
         usertext.innerHTML = newLine[0].text;
+        console.log('setting visitor text');
     } else {
         agenttext.innerHTML = newLine[0].text;
+        console.log('setting agent text');
     }
     var ccsData = document.getElementById("ccs").innerHTML;
-    console.log(ccsData)
+    console.log("ccs data element: " + ccsData)
     if (ccsData == "") {
         // API call to grab data
     }
