@@ -17,12 +17,7 @@ var updateCallback = function(data) {
     console.log("ccs data element: " + ccsData)
     if (ccsData == "") {
         // API call to grab data
-        let visitorId = ""
         let sessionId = ""
-        let onSuccessVisitor = (data) => {
-            visitorId = data; 
-            console.log("visitorId :  " + visitorId);
-        }
         let onSuccessSession = (data) => {
             sessionId = data; 
             console.log("sessionId :  " + sessionId);
@@ -43,12 +38,8 @@ var updateCallback = function(data) {
         let onFailure = (err) => {
             console.log(err);
         }
-        var path = "visitorInfo.visitorId";
-        var path2 = "chatInfo.rtSessionId";
-        lpTag.agentSDK.get(path, onSuccessVisitor, onFailure);
-        lpTag.agentSDK.get(path2, onSuccessSession, onFailure);
-
-        
+        var sessionPath = "chatInfo.rtSessionId";
+        lpTag.agentSDK.get(sessionPath, onSuccessSession, onFailure);
     }
 };
 
