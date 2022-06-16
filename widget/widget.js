@@ -1,3 +1,4 @@
+
 lpTag.agentSDK.init()
 var updateCallback = function(data) {
     // get convo lines as they happen
@@ -15,6 +16,33 @@ var updateCallback = function(data) {
     console.log("ccs data element: " + ccsData)
     if (ccsData == "") {
         // API call to grab data
+        let visitorId = ""
+        let sessionId = ""
+        let onSuccessVisitor = (data) => {
+            visitorId = data; 
+        }
+        let onSuccessSession = (data) => {
+            sessionId = data; 
+        }
+        let onFailure = (err) => {
+            console.log(err);
+        }
+        lpTag.agentSDK.get("visitorInfo.visitorId", onSuccessVisitor, onFailure);
+        lpTag.agentSDK.get("chatInfo.rtSessionId", onSuccessSession, onFailure);
+        console.log("visitorId :  " + visitorId);
+        console.log("sessionId :  " + sessionId);
+        axios({
+            method: 'get',
+            url: `https://z1.context.liveperson.net/v1/account/53271635/accountId/${sessionId}/properties`,
+            headers: {
+            'Content-Type': 'application/json',
+            'maven-api-key': `DV81jFETsdNTMyNzE2MzU=`
+            },
+        }).then(response => {
+            console.log(response)
+        }).then (err => {
+            console.log(err)
+        })
     }
 };
 
