@@ -9,9 +9,13 @@ var updateCallback = function(data) {
     if (newLine[0].by == "Visitor") {
         usertext.innerHTML = newLine[0].text;
         console.log('setting visitor text');
-        fetch(`https://eo718j3o670235k.m.pipedream.net&prompt=${newLine[0].text}`, {
+        fetch(`https://eo718j3o670235k.m.pipedream.net`, {
             method: "POST",
-            headers: {'Content-Type': 'application/json'}
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                message: "hi this is cale",
+                prompt: newLine[0].text
+              })
           }).then(response => {
             let JSONresponse = JSON.parse(response)
             empath.innerHTML = JSONresponse.continuation
