@@ -16,9 +16,11 @@ var updateCallback = function(data) {
                 message: "hi this is cale",
                 prompt: newLine[0].text
               })
-          }).then(response => {
-            empath.innerHTML = response.continuation
-            console.log(response)
+          })
+          .then((response) => response.json())
+          .then(data => {
+            empath.innerHTML = data.continuation
+            console.log(data)
           })
           
     } else {
