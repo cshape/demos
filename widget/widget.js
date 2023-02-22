@@ -11,7 +11,7 @@ var updateCallback = function(data) {
         console.log('setting visitor text');
         fetch(`https://eo718j3o670235k.m.pipedream.net`, {
             method: "POST",
-            headers: {'Content-Type': 'application/json'},
+            headers: {'Content-Type': 'application/json','Access-Control-Allow-Origin': '*'},
             body: JSON.stringify({
                 message: "hi this is cale",
                 prompt: newLine[0].text
