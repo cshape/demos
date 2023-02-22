@@ -17,9 +17,7 @@ var updateCallback = function(data) {
                 prompt: newLine[0].text
               })
           }).then(response => {
-            let JSONresponse = JSON.parse(response)
-            empath.innerHTML = JSONresponse.continuation
-            console.log(JSONresponse.message)
+            empath.innerHTML = response.continuation
             console.log(response)
           })
           
