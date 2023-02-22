@@ -5,9 +5,20 @@ var updateCallback = function(data) {
     var newLine = data.newValue;
     let usertext = document.getElementById("usertext");
     let agenttext = document.getElementById("agenttext");
+    let empath = document.getElementById("empath");
     if (newLine[0].by == "Visitor") {
         usertext.innerHTML = newLine[0].text;
         console.log('setting visitor text');
+        fetch(`https://eo718j3o670235k.m.pipedream.net&prompt=${newLine[0].text}`, {
+            method: "POST",
+            headers: {'Content-Type': 'application/json'}
+          }).then(response => {
+            let JSONresponse = JSON.parse(response)
+            empath.innerHTML = JSONresponse.continuation
+            console.log(JSONresponse.message)
+            console.log(response)
+          })
+          
     } else {
         agenttext.innerHTML = newLine[0].text;
         console.log('setting agent text');
