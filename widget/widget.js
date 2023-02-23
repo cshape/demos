@@ -9,7 +9,6 @@ var updateCallback = function(data) {
     console.log(newLine[0]);
     console.log(newLine[0].by);
     if (newLine[0].by == "Visitor") {
-        usertext.innerHTML = newLine[0].text;
         console.log('visitor message');
         fetch(`https://eo718j3o670235k.m.pipedream.net`, {
             method: "POST",
