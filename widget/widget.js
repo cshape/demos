@@ -6,6 +6,8 @@ var updateCallback = function(data) {
     // let usertext = document.getElementById("usertext");
     // let agenttext = document.getElementById("agenttext");
     let empath = document.getElementById("empath");
+    console.log(newLine[0]);
+    console.log(newLine[0].by);
     if (newLine[0].by == "Visitor") {
         usertext.innerHTML = newLine[0].text;
         console.log('visitor message');
