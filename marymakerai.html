@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mary Maker: AI Wedding Planner</title>
+  <script type="text/javascript">
+      (function(d, t) {
+          var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+          v.onload = function() {
+            window.voiceflow.chat.load({
+              verify: { projectID: '644d70e9a04f800007327a86' },
+              url: 'https://general-runtime.voiceflow.com',
+              versionID: 'production'
+            });
+          }
+          v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+      })(document, 'script');
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #87CEEB;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: #fff;
+      margin-bottom: 30px;
+    }
+
+    svg {
+      width: 150px;
+      height: 150px;
+    }
+
+    .ring {
+      fill: none;
+      stroke-width: 10;
+      stroke-dasharray: 550;
+      stroke-dashoffset: 550;
+      animation: rotate 4s linear infinite;
+    }
+
+    .heart {
+      fill: #fff;
+    }
+
+    @keyframes rotate {
+      to {
+        stroke-dashoffset: 0;
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Mary Maker: AI Wedding Planner</h1>
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="50" cy="50" r="45" class="ring" />
+    <path d="M50 72s18-20.5 27-27C85.5 37 78 26 65.5 26 57 26 50 37 50 37S43 26 34.5 26C22 26 14.5 37 23 45c9 6.5 27 27 27 27z" class="heart" />
+  </svg>
+</body>
+</html>
